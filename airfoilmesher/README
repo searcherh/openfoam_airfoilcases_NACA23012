@@ -1,0 +1,10 @@
+// this is a python script to generate airfoil mesh 
+// It needs numpy and math database, which can be install by
+// sudo apt-get install python-numpy 
+// and math usually has been installed in default
+// Just download the airfoil datas from Internet and save it as .dat files
+// copy this script then save .dat and script in the same dir
+// The "system"'s parent dir is best 
+// replace the "airfoilfile" in script(in line 21) and run it
+// Then the blockMeshDict will be overwrite, with the airfoilmesh you need .
+// Finally, just blockMesh to generate it  
