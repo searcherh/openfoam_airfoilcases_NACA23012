@@ -8,16 +8,17 @@
 FoamFile
 {
     format      ascii;
-    class       volScalarField;
-    object      p;
+    class       volVectorField;
+    object      U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -2 0 0 0 0];
+dimensions      [0 1 -1 0 0 0 0];
 
-//internalField = atmspherePressure 
+Ux 15.84429;
+Uy 2.22677;
 
-internalField   uniform 101325;
+internalField   uniform ($Ux $Uy 0);
 
 boundaryField
 {
@@ -27,12 +28,12 @@ boundaryField
     }
     farfield
     {
-        type            freestreamPressure;
+        type            freestreamVelocity;
         freestreamValue $internalField;
     }
     airfoil
     {
-        type            zeroGradient;
+        type            noSlip;
     }
 }
 
